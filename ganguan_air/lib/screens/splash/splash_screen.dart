@@ -40,17 +40,17 @@ class _SplashScreenState extends State<SplashScreen> {
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(24),
                 ),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.22,
-                  child: Image.asset(
-                    'assets/images/water.png',
+                // child: SizedBox(
+                //   width: double.infinity,
+                //   height: MediaQuery.of(context).size.height * 0.22,
+                //   child: Image.asset(
+                //     'assets/images/water.png',
 
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                    alignment: Alignment.bottomCenter,
-                  ),
-                ),
+                //     width: double.infinity,
+                //     fit: BoxFit.cover,
+                //     alignment: Alignment.bottomCenter,
+                //   ),
+                // ),
               ),
             ),
 
@@ -66,11 +66,28 @@ class _SplashScreenState extends State<SplashScreen> {
 
                   /// LOGO
                   Center(
-                    child: Image.asset(
-                      'assets/images/logo.jpg.jpeg',
-
+                    child: Container(
                       width: 150,
                       height: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blue.shade200,
+                            blurRadius: 20,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/logo.jpg.jpeg',
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
 
